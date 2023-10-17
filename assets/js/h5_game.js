@@ -142,7 +142,6 @@ $(function () {
     var ua = navigator.userAgent.toLowerCase();
     var isWeixin = ua.indexOf('micromessenger') != -1;
     if (isWeixin) {
-        alert(1);
     } else {
         // $maskDown.show();
         // //禁止浏览器滚动
