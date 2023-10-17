@@ -14,7 +14,7 @@ $(function () {
         $canvasMask = $("#canvas-mask"),//canvas遮罩层
         $btn = $("#btn"),//刮奖按钮
         $change = $("#change").text(),//剩余次数
-        data = { count: $change };//次数  
+        data = {count: $change};//次数
 
     //点击弹出规则信息
     $(".awards-rule").click(function () {
@@ -71,21 +71,27 @@ $(function () {
     //点击开始刮奖按钮
     $btn.click(function () {
         //随机生成奖项
-        var a = ["很遗憾,您并未中奖", "iPhone 16", "5200提现券", "10g金条", "YSL小金条", "生日蛋糕", "美味大餐"]
+        var a = ["iPhone16提货券", "5200提现券", "10g金条预定券", "YSL小金条口红", "生日蛋糕~", "美味大餐~"]
         //中奖概率
         var num = Math.floor(Math.floor(Math.random() * 999));
         let item = 0;
-        if (num >= 0 && num <100) {
-            item = 2 // 0-99
-        }else if (num >= 100 && num <300){
+        if (num >= 0 && num < 100) {
+            item = 1 // 0-99
+        } else if (num >= 100 && num < 200) {
+            item = 2 // 100-299
+        } else if (num >= 200 && num < 300) {
             item = 3 // 100-299
-        }else if (num >= 600 && num <999){
-            item = 1 // 600-998
-        }else{
-            item = 0 // 999
-        } 
+        } else if (num >= 300 && num < 400) {
+            item = 4 // 100-299
+        } else if (num >= 400 && num < 500) {
+            item = 5 // 100-299
+        } else if (num >= 500 && num < 800) {
+            item = 6 // 100-299
+        } else {
+            item = 7 // 999
+        }
         //中奖率
-        $(".awbox").attr('data-a',item); //保存Item值
+        $(".awbox").attr('data-a', item); //保存Item值
         if (data.count > 0) {
             data.count--;//减少抽奖次数
             $("#change").text(data.count); //替换剩余抽奖次数
@@ -101,7 +107,8 @@ $(function () {
                     $(".awbox").hide();
                     $('#redux').show();
                 });
-            };
+            }
+            ;
             $('#redux').eraser({
                 size: 20,   //设置橡皮擦大小
                 completeRatio: .6, //设置擦除面积比例
@@ -111,9 +118,11 @@ $(function () {
         } else {
             alert("没有次数了"); //抽奖次数用完
             $("#btn img").attr('src', "assets/images/cant.png");  //替换抽奖次数图片
-        };
+        }
+        ;
 
     });
+
     function showResetButton() {
         const item = $(".awbox").attr('data-a'); //读取Item 值
         //console.log(item + '结束后')
