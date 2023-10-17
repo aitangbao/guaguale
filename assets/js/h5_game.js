@@ -79,20 +79,20 @@ $(function () {
         //中奖概率
         var num = Math.floor(Math.floor(Math.random() * 999));
         let item = 0;
-        if (num >= 0 && num < 100) {
+        if (num >= 0 && num < 150) {
             item = 1 // 0-99
-        } else if (num >= 100 && num < 200) {
+        } else if (num >= 150 && num < 300) {
             item = 2 // 100-299
-        } else if (num >= 200 && num < 300) {
-            item = 3 // 100-299
         } else if (num >= 300 && num < 400) {
+            item = 3 // 100-299
+        } else if (num >= 400 && num < 550) {
             item = 4 // 100-299
-        } else if (num >= 400 && num < 500) {
+        } else if (num >= 550 && num < 700) {
             item = 5 // 100-299
-        } else if (num >= 500 && num < 600) {
+        } else if (num >= 700 && num < 800) {
             item = 6 // 100-299
-        } else if (num >= 600 && num < 800) {
-            item = 6 // 100-299
+        } else if (num >= 800 && num < 900) {
+            item = 7 // 100-299
         } else {
             item = 0 // 100-299
         }
