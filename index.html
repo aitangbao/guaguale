@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生日快乐吖</title>
+    <style>
+        body {
+            --g-c: #A70019;
+            --page-bg: #FFBC70;
+            --panel-font-color: #F26B27;
+            --rule-bg: url(../images/rule-bg.png);
+            --awards-center-bg: #FFE4C5;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+
+<body>
+<!--页面加载-->
+<div class="loading-box">
+    <div class="loading"></div>
+</div>
+<!--顶部图片-->
+<div class="header-img">
+    <img src="assets/images/header.png" alt="" class="img-res">
+    <a href="#" class="awards-rule">生日祝福 <span> <img src="assets/images/right.png" alt=""></span></a>
+</div>
+<!--刮刮乐核心区域-->
+<div class="awards-box">
+    <img src="assets/images/box.png" alt="" class="img-res">
+    <div class="awards-panel">
+        <div class="awbox">
+            <div class="aw-content">
+                <div id="mask_img_bg">
+                    <p>iphone 13</p>
+                </div>
+                <img id="redux" src="assets/images/m2.png" class="img-res"/>
+            </div>
+        </div>
+        <div id="canvas-mask">
+            <a id="btn" href="javascript:;">
+                <img src="assets/images/begin.png" alt="" class="img-res">
+            </a>
+            <p>您今天还有<span id="change">10</span>次刮奖机会</p>
+        </div>
+    </div>
+</div>
+<!--奖品中心-->
+<div class="awards-center">
+    <div class="center-title web-font">
+        奖品说明
+    </div>
+    <div class="awards-list">
+        <div class="flex">
+            <div class="awards-img">
+                <img src="assets/images/1.png"
+                     alt="" class="img-res">
+            </div>
+            <div class="flex-item">
+                <div class="dis-table">
+                    <h2>一等奖</h2>
+                    <p class="two-line">
+                        iphone16一台，需2024年9月20日之后领取，请及时领取
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="awards-img">
+                <img src="assets/images/2.png"
+                     alt="" class="img-res">
+            </div>
+            <div class="flex-item">
+                <div class="dis-table">
+                    <h2>二等奖</h2>
+                    <p class="two-line">
+                        5200元提现券，可随时提现
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="awards-img">
+                <img src="assets/images/3.png"
+                     alt="" class="img-res">
+            </div>
+            <div class="flex-item">
+                <div class="dis-table">
+                    <h2>三等奖</h2>
+                    <p class="two-line">
+                        10g金条，需金价低于400元/克 之后领取，请及时留意领取
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div class="awards-img">
+                <img src="assets/images/4.png"
+                     alt="" class="img-res">
+            </div>
+            <div class="flex-item">
+                <div class="dis-table">
+                    <h2>四等奖</h2>
+                    <p class="two-line">
+                        YSL小金条口红一只
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="awards-img">
+                <img src="assets/images/5.png"
+                     alt="" class="img-res">
+            </div>
+            <div class="flex-item">
+                <div class="dis-table">
+                    <h2>五等奖</h2>
+                    <p class="two-line">
+                        美味大餐一份
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="awards-img">
+                <img src="assets/images/6.png"
+                     alt="" class="img-res">
+            </div>
+            <div class="flex-item">
+                <div class="dis-table">
+                    <h2>六等奖</h2>
+                    <p class="two-line">
+                        美味蛋糕一份
+                    </p>
+                </div>
+            </div>
+        </div>
+         <div class="flex">
+            <div class="awards-img">
+                <img src="assets/images/7.png"
+                     alt="" class="img-res">
+            </div>
+            <div class="flex-item">
+                <div class="dis-table">
+                    <h2>幸福快乐奖</h2>
+                    <p class="two-line">
+                        记得每天都要幸福快乐哦
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="see-btn">
+            <a href="awards.html" class="web-font">查看我的奖品</a>
+        </div>
+    </div>
+</div>
+<!--游戏规则弹窗-->
+<div id="mask-rule" class="mask-bg">
+    <div class="box-rule">
+        <h2 class="web-font">生日祝福</h2>
+        <span id="close-rule" class="close-icon">×</span>
+        <div class="con">
+            <div class="text">
+                在你生日的这一天，我想向你表达我对你的深深爱意和祝福。你是我的生命中最珍贵的礼物，我感激上天让我有幸与你共度一生。
+
+                每一天，我都感到幸运能够有你作为我的妻子。你是我的支柱，我的爱人，我的忠实伴侣，以及我永远的挚爱。你的温柔、善良和关怀让我的生活充满了阳光和喜悦。
+
+                在这特别的日子里，我祝愿你的笑容如阳光般灿烂，幸福永远伴随着你。愿你的梦想成真，愿你的心灵始终充满喜悦和满足。愿我们的生活一直充满爱、理解和共同成长。
+
+                感谢你为我们家庭付出的一切，感谢你的无私奉献和无尽的爱。我永远珍视你，永远爱你。生日快乐，我最爱的妻子！
+
+                爱你的老公
+            </div>
+            <div class="kown-btn web-font">
+                我很开心
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--中奖区域-->
+<div class="gole-awards">
+    <div class="show">
+        <img class="img-res bg" src="assets/images/gole.png">
+        <div class="goleaw-img">
+            <h2 class="web-font">
+                恭喜您,中奖啦!
+            </h2>
+            <p id="atext"></p>
+            <a class="ling-btn web-font" href="awards.html">
+                马上领取
+            </a>
+        </div>
+    </div>
+    <div class="mask"></div>
+</div>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="assets/js/index.js"></script>
+<script src="assets/js/h5_game.js"></script>
+</body>
+
+</html>
