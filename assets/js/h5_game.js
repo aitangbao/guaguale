@@ -5,6 +5,10 @@ $(function () {
             $("body").addClass("slideIn")
         }
     };
+    if (localStorage.getItem("count") == null){
+        localStorage.setItem("count",100);
+    }
+    $("#change").text(localStorage.getItem("count"))
     var $maskRule = $("#mask-rule"),//规则遮罩层
         $maskawards = $("#mask-awards"),//红包遮罩层 
         $mask = $("#mask"),//红包遮罩层 
@@ -13,7 +17,7 @@ $(function () {
         $maskDown = $("#mask-down"),
         $canvasMask = $("#canvas-mask"),//canvas遮罩层
         $btn = $("#btn"),//刮奖按钮
-        $change = $("#change").text(),//剩余次数
+        $change = localStorage.getItem("count"),//剩余次数
         data = {count: $change};//次数
 
     //点击弹出规则信息
@@ -71,7 +75,7 @@ $(function () {
     //点击开始刮奖按钮
     $btn.click(function () {
         //随机生成奖项
-        var a = ["iPhone16提货券", "5200提现券", "10g金条预定券", "YSL小金条口红", "生日蛋糕~", "美味大餐~"]
+        var a = ["未中奖，好运+1； 幸福快乐奖", "iphone16提货券", "5200提现券", "10g金条预定券", "YSL小金条口红", "生日蛋糕~", "美味大餐~"]
         //中奖概率
         var num = Math.floor(Math.floor(Math.random() * 999));
         let item = 0;
@@ -85,22 +89,34 @@ $(function () {
             item = 4 // 100-299
         } else if (num >= 400 && num < 500) {
             item = 5 // 100-299
-        } else if (num >= 500 && num < 800) {
+        } else if (num >= 500 && num < 600) {
             item = 6 // 100-299
         } else {
-            item = 7 // 999
+            item = 0 // 100-299
         }
         //中奖率
         $(".awbox").attr('data-a', item); //保存Item值
         if (data.count > 0) {
             data.count--;//减少抽奖次数
+            localStorage.setItem("count", data.count);
             $("#change").text(data.count); //替换剩余抽奖次数
             $(".awbox").show(); //抽奖区域显示    
             if (item > 0) {
                 $("#atext,#mask_img_bg p").html(a[item]); //替换所得奖项
+                var items = localStorage.getItem("items");
+                if(items == null) {
+                    var arr = [];
+                    arr.push(item);
+                    localStorage.setItem("items", JSON.stringify(arr));
+                } else {
+                    var arrAfter = JSON.parse(localStorage.getItem("items"));
+                    arrAfter.push(item);
+                    localStorage.setItem("items", JSON.stringify(arrAfter));
+                }
+
             }
             if (item == 0) {
-                $("#mask_img_bg").html("<p><span  class='web-font'>很遗憾，您未中奖</span><br/> <a class='agine'><img src='./assets/images/flash.png'>再刮一次</a></p>");
+                $("#mask_img_bg").html("<p><span  class='web-font'>未中奖，好运+1</span><br/> <a class='agine'><img src='./assets/images/flash.png'>再刮一次</a></p>");
                 $(".agine").on("click", function () {
                     $('#redux').eraser('reset'); //涂抹板重置  
                     $canvasMask.show();
