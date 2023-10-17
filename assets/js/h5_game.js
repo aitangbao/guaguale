@@ -5,8 +5,8 @@ $(function () {
             $("body").addClass("slideIn")
         }
     };
-    if (localStorage.getItem("count") == null){
-        localStorage.setItem("count",100);
+    if (localStorage.getItem("count") == null) {
+        localStorage.setItem("count", 100);
     }
     $("#change").text(localStorage.getItem("count"))
     var $maskRule = $("#mask-rule"),//规则遮罩层
@@ -75,7 +75,7 @@ $(function () {
     //点击开始刮奖按钮
     $btn.click(function () {
         //随机生成奖项
-        var a = ["未中奖，好运+1； 幸福快乐奖", "iphone16提货券", "5200提现券", "10g金条预定券", "YSL小金条口红", "生日蛋糕~", "美味大餐~"]
+        var a = ["未中奖，好运+1； 幸福快乐奖", "iphone16提货券", "5200提现券", "10g金条预定券", "YSL小金条口红", "生日蛋糕~", "美味大餐~", "美好祝愿奖，开心+1~"]
         //中奖概率
         var num = Math.floor(Math.floor(Math.random() * 999));
         let item = 0;
@@ -91,6 +91,8 @@ $(function () {
             item = 5 // 100-299
         } else if (num >= 500 && num < 600) {
             item = 6 // 100-299
+        } else if (num >= 600 && num < 800) {
+            item = 6 // 100-299
         } else {
             item = 0 // 100-299
         }
@@ -104,7 +106,7 @@ $(function () {
             if (item > 0) {
                 $("#atext,#mask_img_bg p").html(a[item]); //替换所得奖项
                 var items = localStorage.getItem("items");
-                if(items == null) {
+                if (items == null) {
                     var arr = [];
                     arr.push(item);
                     localStorage.setItem("items", JSON.stringify(arr));
