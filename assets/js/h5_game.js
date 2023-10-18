@@ -6,7 +6,7 @@ $(function () {
         }
     };
     if (localStorage.getItem("count") == null) {
-        localStorage.setItem("count", 100);
+        localStorage.setItem("count", 27);
     }
     $("#change").text(localStorage.getItem("count"))
     var $maskRule = $("#mask-rule"),//规则遮罩层
@@ -83,40 +83,50 @@ $(function () {
             item = 1 // 0-99
         } else if (num >= 150 && num < 300) {
             item = 2 // 100-299
-        } else if (num >= 300 && num < 400) {
+        } else if (num >= 300 && num < 450) {
             item = 3 // 100-299
-        } else if (num >= 400 && num < 550) {
+        } else if (num >= 450 && num < 600) {
             item = 4 // 100-299
-        } else if (num >= 550 && num < 700) {
+        } else if (num >= 600 && num < 750) {
             item = 5 // 100-299
-        } else if (num >= 700 && num < 800) {
+        } else if (num >= 750 && num < 850) {
             item = 6 // 100-299
-        } else if (num >= 800 && num < 900) {
+        } else if (num >= 850 && num < 950) {
             item = 7 // 100-299
         } else {
             item = 0 // 100-299
         }
         //中奖率
-        $(".awbox").attr('data-a', item); //保存Item值
+         //保存Item值
         if (data.count > 0) {
             data.count--;//减少抽奖次数
             localStorage.setItem("count", data.count);
             $("#change").text(data.count); //替换剩余抽奖次数
-            $(".awbox").show(); //抽奖区域显示    
+            $(".awbox").show(); //抽奖区域显示
             if (item > 0) {
-                $("#atext,#mask_img_bg p").html(a[item]); //替换所得奖项
                 var items = localStorage.getItem("items");
                 if (items == null) {
                     var arr = [];
                     arr.push(item);
                     localStorage.setItem("items", JSON.stringify(arr));
+                    $("#atext,#mask_img_bg p").html(a[item]); //替换所得奖项
+
                 } else {
                     var arrAfter = JSON.parse(localStorage.getItem("items"));
-                    arrAfter.push(item);
-                    localStorage.setItem("items", JSON.stringify(arrAfter));
+                    if (arrAfter.indexOf(item) >= 0) {
+                        item = 0;
+                    } else {
+                        arrAfter.push(item);
+                        localStorage.setItem("items", JSON.stringify(arrAfter));
+                        $("#atext,#mask_img_bg p").html(a[item]); //替换所得奖项
+
+                    }
+
                 }
 
+
             }
+            $(".awbox").attr('data-a', item);
             if (item == 0) {
                 $("#mask_img_bg").html("<p><span  class='web-font'>未中奖，好运+1</span><br/> <a class='agine'><img src='./assets/images/flash.png'>再刮一次</a></p>");
                 $(".agine").on("click", function () {
