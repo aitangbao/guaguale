@@ -180,9 +180,9 @@ $(function () {
     var isWeixin = ua.indexOf('micromessenger') != -1;
     if (isWeixin) {
     } else {
-        // $maskDown.show();
-        // //禁止浏览器滚动
-        // $("html,body").addClass("overHiden");
-        // window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
+        $maskDown.show();
+        //禁止浏览器滚动
+        $("html,body").addClass("overHiden");
+        window.event ? (window.event.cancelBubble = true) : e.stopPropagation();
     }
 });
