@@ -75,7 +75,7 @@ $(function () {
     //点击开始刮奖按钮
     $btn.click(function () {
         //随机生成奖项
-        var a = ["未中奖，好运+1； 幸福快乐奖", "iphone16提货券", "5200提现券", "10g金条预定券", "YSL小金条口红", "生日蛋糕~", "美味大餐~", "美好祝愿奖，开心+1~"]
+        var a = ["未中奖，好运+1； 幸福快乐奖", "iphone16提货券", "5200提现券", "粉底液一瓶", "口红一只"]
         //中奖概率
         var num = Math.floor(Math.floor(Math.random() * 999));
         let item = 0;
