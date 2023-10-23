@@ -6,7 +6,7 @@ $(function () {
         }
     };
     if (localStorage.getItem("count") == null) {
-        localStorage.setItem("count", 27);
+        localStorage.setItem("count", 10);
     }
     $("#change").text(localStorage.getItem("count"))
     var $maskRule = $("#mask-rule"),//规则遮罩层
@@ -75,17 +75,17 @@ $(function () {
     //点击开始刮奖按钮
     $btn.click(function () {
         //随机生成奖项
-        var a = ["未中奖，好运+1；", "iphone16提货券", "5200提现券", "粉底液一瓶", "口红一只","幸福快乐奖"]
+        var a = ["未中奖，好运+1；", "iphone16提货券", "5200提现券", "粉底液一瓶", "口红一只","永远幸福快乐奖"]
         //中奖概率
         var num = Math.floor(Math.floor(Math.random() * 999));
         let item = 0;
-        if (num >= 0 && num < 100) {
+        if (num >= 0 && num < 200) {
             item = 1 // 0-99
-        } else if (num >= 100 && num < 250) {
+        } else if (num >= 200 && num < 400) {
             item = 2 // 100-299
-        } else if (num >= 250 && num < 500) {
+        } else if (num >= 400 && num < 600) {
             item = 3 // 100-299
-        } else if (num >= 500 && num < 800) {
+        } else if (num >= 600 && num < 800) {
             item = 4 // 100-299
         } else if (num >= 800 && num < 999) {
             item = 5 // 100-299
@@ -176,11 +176,11 @@ $(function () {
     var isWeixin = ua.indexOf('micromessenger') != -1;
     if (isWeixin) {
     } else {
-        // 这里警告框会阻塞当前页面继续加载
-        alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
-        // 以下代码是用javascript强行关闭当前页面
-        var opened = window.open('about:blank', '_self');
-        opened.opener = null;
-        opened.close();
+        // // 这里警告框会阻塞当前页面继续加载
+        // alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+        // // 以下代码是用javascript强行关闭当前页面
+        // var opened = window.open('about:blank', '_self');
+        // opened.opener = null;
+        // opened.close();
     }
 });
