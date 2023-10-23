@@ -75,7 +75,7 @@ $(function () {
     //点击开始刮奖按钮
     $btn.click(function () {
         //随机生成奖项
-        var a = ["未中奖，好运+1； 幸福快乐奖", "iphone16提货券", "5200提现券", "粉底液一瓶", "口红一只"]
+        var a = ["未中奖，好运+1；", "iphone16提货券", "5200提现券", "粉底液一瓶", "口红一只","幸福快乐奖"]
         //中奖概率
         var num = Math.floor(Math.floor(Math.random() * 999));
         let item = 0;
@@ -87,6 +87,8 @@ $(function () {
             item = 3 // 100-299
         } else if (num >= 500 && num < 800) {
             item = 4 // 100-299
+        } else if (num >= 800 && num < 999) {
+            item = 5 // 100-299
         } else {
             item = 0 // 100-299
         }
